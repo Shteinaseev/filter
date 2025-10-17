@@ -6,21 +6,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <input type="text" class="search-bar" placeholder="Kucaj ime">
 
-    <ul class="name-list">
-        <li style="display: none;">Ana Petrovic</li>
-        <li style="display: none;">Marko Jovanovic</li>
+    <svg style="display: none">
+        <filter id="glass-distortion">
+            <feTurbulence type="turbulence" baseFrequency="0.008" numOctaves="2" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="77" />
+        </filter>
+    </svg>
+    <main class="main">
+        <section class="form">
+            <div class="glass-filter"></div>
+            <div class="glass-overlay"></div>
+            <div class="glass-specular"></div>
+            <input type="text" class="search-bar" placeholder="Kucaj ime">
+            <ul id="name-list" class="name-list">
+                <li style="opacity: 1; font-size: 1.2rem;">Ana Petrovic</li>
+                <li style="opacity: 1; font-size: 1.2rem;">Marko Jovanovic</li>
 
-        <li style="display: none;">Milica Stankovic</li>
-        <li style="display: none;">Nikola Kostic</li>
+                <li style="opacity: 1; font-size: 1.2rem;">Milica Stankovic</li>
+                <li style="opacity: 1; font-size: 1.2rem;">Nikola Kostic</li>
 
-        <li style="display: none;">Jelena Maric</li>
-        <li style="display: none;">Luka Ilic</li>
-    </ul>
+                <li style="opacity: 1; font-size: 1.2rem;">Jelena Maric</li>
+                <li style="opacity: 1; font-size: 1.2rem;">Luka Ilic</li>
+            </ul>
+        </section>
+        <section class="form">
+            <div class="glass-filter"></div>
+            <div class="glass-overlay"></div>
+            <div class="glass-specular"></div>
+            <div class="btn-cont">
+                <button class="btn-sort btn-sort-name">Sortiraj po imenu</button>
+                <button class="btn-sort btn-sort-average">Sortiraj po proseku</button>
+            </div>
+            <ul id="prosek-list" class="name-list">
+                <li><span class="name">Ana Petrovic</span> - 
+                <span class="avg">prosek: 9.4</span></li>
+                <li><span class="name">Marko Jovanovic</span>- 
+                    <span class="avg">prosek: 8.7</span></li>
+                </li>
+                <li>
+                    <span class="name">Milica Stankovic</span> -
+                    <span class="avg">prosek: 9.8</span>
+                </li>
+                <li>
+                    <span class="name">Nikola Kostic</span> - 
+                    <span class="avg">prosek: 8.3</span>
+                </li>
+
+                <li>
+                    <span class="name">Jelena Maric</span> - 
+                    <span class="avg">prosek: 9.1</span>
+                </li>
+            </ul>
+        </section>
+    </main>
 </body>
 
 </html>
